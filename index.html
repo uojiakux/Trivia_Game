@@ -62,7 +62,7 @@
     //         }
     //     }
 
-    $("#startButton").on("click", run, function startNextQuestionSet () {
+    $("#startButton").on("click", function startNextQuestionSet () {
 
         $("#question-section").html("<h3 id='questionLine'> What country produces the most potatoes? </h3>");
         $("#question-section").append("<button class='choices' id='choice-a'> China </button>");
