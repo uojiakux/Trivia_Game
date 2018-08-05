@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Trivial Triva</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+</head>
+
+
+<body>
+    
+<div id="bodyContainer">
+
+    <br><br>
+    <h1 id="Title">Totally Trivial Trivia!</h1>
+
+    <button id="startButton">Start!</button>
+
+    <div id="show-number"></div>
+    <div id="question-section"></div>
+
+
+
+
+</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="assets/javascript/app.js"></script> -->
+
+    <script type="text/javascript">
+    
+    var correctanswers = 0;
+    var incorrectanswers = 0;
+
+    // Set our number counter to 11
+    // var number = 11;
+    // //  Variable that will hold our interval ID when we execute
+    // //  the "run" function
+    // var intervalId;
+
+
+    // function run() {
+    //         clearInterval(intervalId);
+    //         intervalId = setInterval(decrement, 1000);
+    //         }
+
+    // function decrement() {
+    //         number--;
+    //         $("#show-number").html("<h2>" + number + "</h2>");
+
+
+    //         //  Once number hits zero...
+    //         if (number === 0) {
+
+    //         //  ...run the stop function.
+    //         stop();
+    //         incorrectanswers++;
+    //         secondQuestionSet ();
+
+    //         //  Alert the user that time is up.
+    //         //   alert("Time Up!");
+    //         }
+    //     }
+
+    $("#startButton").on("click", run, function startNextQuestionSet () {
+
+        $("#question-section").html("<h3 id='questionLine'> What country produces the most potatoes? </h3>");
+        $("#question-section").append("<button class='choices' id='choice-a'> China </button>");
+        $("#question-section").append("<button class='choices' id='choice-b'> United States </button>");
+        $("#question-section").append("<button class='choices' id='choice-c'> Ireland </button>");
+        $("#question-section").append("<button class='choices' id='choice-d'> Russia </button>");
+        $("#startButton").remove();
+
+
+                                    $("#choice-a").on("click", function () {
+                                        secondQuestionSet ();
+                                        correctanswers++;
+                                        console.log("Correct:" + correctanswers);
+                                        });
+                                    $("#choice-b").on("click", function () {
+                                        secondQuestionSet ();
+                                        incorrectanswers++;
+                                        console.log("Incorrect:" + incorrectanswers);
+                                        });
+                                    $("#choice-c").on("click", function () {
+                                        secondQuestionSet ();
+                                        incorrectanswers++;
+                                        console.log("Incorrect:" + incorrectanswers);
+                                        });
+                                    $("#choice-d").on("click", function () {
+                                        secondQuestionSet ();
+                                        incorrectanswers++;
+                                        console.log("Incorrect:" + incorrectanswers);
+                                        });
+            
+    });
+
+    function secondQuestionSet () {
+
+        $("#question-section").html("<h3 id='questionLine'> What vegetable has varieties known as Bell Tower, Orobelle, and Jupiter? </h3>");
+        $("#question-section").append("<button class='choices' id='choice-a'> Onion </button>");
+        $("#question-section").append("<button class='choices' id='choice-b'> Pepper </button>");
+        $("#question-section").append("<button class='choices' id='choice-c'> Squash </button>");
+        $("#question-section").append("<button class='choices' id='choice-d'> Carrot </button>");
+        $("#startButton").remove();
+
+                                    $("#choice-a").on("click", function () {
+                                        thirdQuestionSet ();
+                                        incorrectanswers++;
+                                        console.log("Incorrect:" + incorrectanswers);
+                                        });
+                                    $("#choice-b").on("click", function () {
+                                        thirdQuestionSet ();
+                                        correctanswers++;
+                                        console.log("Correct:" + correctanswers);
+                                        });
+                                    $("#choice-c").on("click", function () {
+                                        thirdQuestionSet ();
+                                        incorrectanswers++;
+                                        console.log("Incorrect:" + incorrectanswers);
+                                        });
+                                    $("#choice-d").on("click", function () {
+                                        thirdQuestionSet ();
+                                        incorrectanswers++;
+                                        console.log("Incorrect:" + incorrectanswers);
+                                        });
+
+    };
+
+    function thirdQuestionSet () {
+
+        $("#question-section").html("<h3 id='questionLine'> Europeans first learned of chocolate from whom? </h3>");
+        $("#question-section").append("<button class='choices' id='choice-a'> Africans </button>");
+        $("#question-section").append("<button class='choices' id='choice-b'> Aztecs </button>");
+        $("#question-section").append("<button class='choices' id='choice-c'> East Indians </button>");
+        $("#question-section").append("<button class='choices' id='choice-d'> Asians </button>");
+        $("#startButton").remove();
+
+                                    $("#choice-a").on("click", function () {
+                                        fourthQuestionSet ();
+                                        incorrectanswers++;
+                                        console.log("Incorrect:" + incorrectanswers);
+                                        });
+                                    $("#choice-b").on("click", function () {
+                                        fourthQuestionSet ();
+                                        correctanswers++;
+                                        console.log("Correct:" + correctanswers);
+                                        });
+                                    $("#choice-c").on("click", function () {
+                                        fourthQuestionSet ();
+                                        incorrectanswers++;
+                                        console.log("Incorrect:" + incorrectanswers);
+                                        });
+                                    $("#choice-d").on("click", function () {
+                                        fourthQuestionSet ();
+                                        incorrectanswers++;
+                                        console.log("Incorrect:" + incorrectanswers);
+                                        });
+
+    };
+
+    function fourthQuestionSet () {
+
+        $("#question-section").html("<h3 id='questionLine'> Which of the following is not a favorable adjective when discussing wine? </h3>");
+        $("#question-section").append("<button class='choices' id='choice-a'> Fat </button>");
+        $("#question-section").append("<button class='choices' id='choice-b'> Flinty </button>");
+        $("#question-section").append("<button class='choices' id='choice-c'> Leggy </button>");
+        $("#question-section").append("<button class='choices' id='choice-d'> Vigorous </button>");
+        $("#startButton").remove();
+
+                                    $("#choice-a").on("click", function () {
+                                        fifthQuestionSet ();
+                                        correctanswers++;
+                                        console.log("Correct:" + correctanswers);
+                                        });
+                                    $("#choice-b").on("click", function () {
+                                        fifthQuestionSet ();
+                                        incorrectanswers++;
+                                        console.log("Incorrect:" + incorrectanswers);
+                                        });
+                                    $("#choice-c").on("click", function () {
+                                        fifthQuestionSet ();
+                                        incorrectanswers++;
+                                        console.log("Incorrect:" + incorrectanswers);
+                                        });
+                                    $("#choice-d").on("click", function () {
+                                        fifthQuestionSet ();
+                                        incorrectanswers++;
+                                        console.log("Incorrect:" + incorrectanswers);
+                                        });
+
+    };
+    
+    function fifthQuestionSet () {
+
+        $("#question-section").html("<h3 id='questionLine'> 'Frenching' is the process of... </h3>");
+        $("#question-section").append("<button class='choices' id='choice-a'> adding cream </button>");
+        $("#question-section").append("<button class='choices' id='choice-b'> wrapping in pastry </button>");
+        $("#question-section").append("<button class='choices' id='choice-c'> baking at low heat </button>");
+        $("#question-section").append("<button class='choices' id='choice-d'> cleaning bones of fat and meat </button>");
+        $("#startButton").remove();
+
+                                    $("#choice-a").on("click", function () {
+                                        incorrectanswers++;
+                                        console.log("Incorrect:" + incorrectanswers);
+                                        });
+                                    $("#choice-b").on("click", function () {
+                                        incorrectanswers++;
+                                        console.log("Incorrect:" + incorrectanswers);
+                                        });
+                                    $("#choice-c").on("click", function () {
+                                        incorrectanswers++;
+                                        console.log("Incorrect:" + incorrectanswers);
+                                        });
+                                    $("#choice-d").on("click", function () {
+                                        correctanswers++;
+                                        console.log("Correct:" + correctanswers);
+                                        });
+
+    };
+
+
+
+    
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+body {
+    background-image: url(../images/retina_wood.png);
+}
+
+#bodyContainer {
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+    height: 900px;
+    background-color: white;
+    border: 5px;
+    border-color: rgb(75, 75, 138);
+}
+
+#Title {
+    text-align: center;
+}
+
+#startButton {
+    margin-left: 45%;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#questionLine {
+    text-align: center;
+}
+
+.choices {
+    background-color: white;
+    margin-left: 40%;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 200px;
+    font-size: 20px;
+}
+
