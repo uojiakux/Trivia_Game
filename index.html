@@ -47,7 +47,8 @@
 
     function decrementone() {
             number--;
-            $("#show-number").html("<h2>" + number + "</h2>");
+            $("#show-number").show();
+            $("#show-number").html("<h2> Time Left: " + number + "</h2>");
 
             if (number === 0) {
                 number = 16;
@@ -65,7 +66,8 @@
 
     function decrementtwo() {
             number--;
-            $("#show-number").html("<h2>" + number + "</h2>");
+            $("#show-number").show();
+            $("#show-number").html("<h2> Time Left: " + number + "</h2>");
 
             if (number === 0) {
                 number = 16;
@@ -83,7 +85,8 @@
 
     function decrementthree() {
             number--;
-            $("#show-number").html("<h2>" + number + "</h2>");
+            $("#show-number").show();
+            $("#show-number").html("<h2> Time Left: " + number + "</h2>");
 
             if (number === 0) {
                 number = 16;
@@ -101,7 +104,8 @@
 
     function decrementfour() {
             number--;
-            $("#show-number").html("<h2>" + number + "</h2>");
+            $("#show-number").show();
+            $("#show-number").html("<h2> Time Left: " + number + "</h2>");
 
             if (number === 0) {
                 number = 16;
@@ -119,7 +123,8 @@
 
     function decrementfour() {
             number--;
-            $("#show-number").html("<h2>" + number + "</h2>");
+            $("#show-number").show();
+            $("#show-number").html("<h2> Time Left: " + number + "</h2>");
 
             if (number === 0) {
                 number = 16;
@@ -165,7 +170,7 @@
                 function intervalone() {
                         clearInterval(intervalId);
                         intervalId = setInterval(decrementintervalone, 1000);
-                        number = 6;
+                        number = 4;
                         }
 
                 function decrementintervalone() {
@@ -179,7 +184,7 @@
                 function firstQuestionRight () {
                         $("#question-section").html("<h3> You Guessed Correct! </h3>");
                         $("#question-section").append("<img src='assets/images/Chinapotatoes.jpg' width= '500px'>");
-                        $("#show-number").remove();
+                        $("#show-number").hide();
                         intervalone();
 
                 }
@@ -188,10 +193,10 @@
                         $("#question-section").html("<h3> You Guessed Wrong! </h3>");
                         $("#question-section").append("<h3> Correct Answer: China </h3>");
                         $("#question-section").append("<img src='assets/images/Chinapotatoes.jpg' width= '500px'>");
-                        $("#show-number").remove();
+                        $("#show-number").hide();
                         intervalone();
-
                 }
+
 
     function secondQuestionSet () {
 
@@ -204,27 +209,58 @@
         runtwo ();
 
                                     $("#choice-a").on("click", function () {
-                                        thirdQuestionSet ();
+                                        secondQuestionIncorrect ();
                                         incorrectanswers++;
                                         console.log("Incorrect:" + incorrectanswers);
                                         });
                                     $("#choice-b").on("click", function () {
-                                        thirdQuestionSet ();
+                                        secondQuestionRight ();
                                         correctanswers++;
                                         console.log("Correct:" + correctanswers);
                                         });
                                     $("#choice-c").on("click", function () {
-                                        thirdQuestionSet ();
+                                        secondQuestionIncorrect ();
                                         incorrectanswers++;
                                         console.log("Incorrect:" + incorrectanswers);
                                         });
                                     $("#choice-d").on("click", function () {
-                                        thirdQuestionSet ();
+                                        secondQuestionIncorrect ();
                                         incorrectanswers++;
                                         console.log("Incorrect:" + incorrectanswers);
                                         });
 
     };
+
+                function intervaltwo() {
+                        clearInterval(intervalId);
+                        intervalId = setInterval(decrementintervaltwo, 1000);
+                        number = 4;
+                        }
+
+                function decrementintervaltwo() {
+                        number--;
+
+                        if (number === 0) {
+                            thirdQuestionSet ();
+                        }
+                    }
+
+                function secondQuestionRight () {
+                        $("#question-section").html("<h3> You Guessed Correct! </h3>");
+                        $("#question-section").append("<img src='assets/images/Bell-Peppers.jpg' width= '500px'>");
+                        $("#show-number").hide();
+                        intervaltwo();
+
+                }
+
+                function secondQuestionIncorrect () {
+                        $("#question-section").html("<h3> You Guessed Wrong! </h3>");
+                        $("#question-section").append("<h3> Correct Answer: Pepper </h3>");
+                        $("#question-section").append("<img src='assets/images/Bell-Peppers.jpg' width= '500px'>");
+                        $("#show-number").hide();
+                        intervaltwo();
+                }
+
 
     function thirdQuestionSet () {
 
@@ -237,27 +273,58 @@
         runthree();
 
                                     $("#choice-a").on("click", function () {
-                                        fourthQuestionSet ();
+                                        thirdQuestionIncorrect ();
                                         incorrectanswers++;
                                         console.log("Incorrect:" + incorrectanswers);
                                         });
                                     $("#choice-b").on("click", function () {
-                                        fourthQuestionSet ();
+                                        thirdQuestionRight ();
                                         correctanswers++;
                                         console.log("Correct:" + correctanswers);
                                         });
                                     $("#choice-c").on("click", function () {
-                                        fourthQuestionSet ();
+                                        thirdQuestionIncorrect ();
                                         incorrectanswers++;
                                         console.log("Incorrect:" + incorrectanswers);
                                         });
                                     $("#choice-d").on("click", function () {
-                                        fourthQuestionSet ();
+                                        thirdQuestionIncorrect ();
                                         incorrectanswers++;
                                         console.log("Incorrect:" + incorrectanswers);
                                         });
 
     };
+
+                function intervalthree() {
+                        clearInterval(intervalId);
+                        intervalId = setInterval(decrementintervalthree, 1000);
+                        number = 4;
+                        }
+
+                function decrementintervalthree() {
+                        number--;
+
+                        if (number === 0) {
+                            fourthQuestionSet ();
+                        }
+                    }
+
+                function thirdQuestionRight () {
+                        $("#question-section").html("<h3> You Guessed Correct! </h3>");
+                        $("#question-section").append("<img src='assets/images/Aztecs-First-Used-Chocolate-w-754x377.jpg' width= '500px'>");
+                        $("#show-number").hide();
+                        intervalthree();
+
+                }
+
+                function thirdQuestionIncorrect () {
+                        $("#question-section").html("<h3> You Guessed Wrong! </h3>");
+                        $("#question-section").append("<h3> Correct Answer: Aztecs </h3>");
+                        $("#question-section").append("<img src='assets/images/Aztecs-First-Used-Chocolate-w-754x377.jpg' width= '500px'>");
+                        $("#show-number").hide();
+                        intervalthree();
+                }
+
 
     function fourthQuestionSet () {
 
@@ -270,28 +337,59 @@
         runfour();
 
                                     $("#choice-a").on("click", function () {
-                                        fifthQuestionSet ();
+                                        fourthQuestionRight ();
                                         correctanswers++;
                                         console.log("Correct:" + correctanswers);
                                         });
                                     $("#choice-b").on("click", function () {
-                                        fifthQuestionSet ();
+                                        fourthQuestionIncorrect ();
                                         incorrectanswers++;
                                         console.log("Incorrect:" + incorrectanswers);
                                         });
                                     $("#choice-c").on("click", function () {
-                                        fifthQuestionSet ();
+                                        fourthQuestionIncorrect ();
                                         incorrectanswers++;
                                         console.log("Incorrect:" + incorrectanswers);
                                         });
                                     $("#choice-d").on("click", function () {
-                                        fifthQuestionSet ();
+                                        fourthQuestionIncorrect ();
                                         incorrectanswers++;
                                         console.log("Incorrect:" + incorrectanswers);
                                         });
 
     };
+
+                function intervalfour() {
+                        clearInterval(intervalId);
+                        intervalId = setInterval(decrementintervalfour, 1000);
+                        number = 4;
+                        }
+
+                function decrementintervalfour() {
+                        number--;
+
+                        if (number === 0) {
+                            fifthQuestionSet ();
+                        }
+                    }
+
+                function fourthQuestionRight () {
+                        $("#question-section").html("<h3> You Guessed Correct! </h3>");
+                        $("#question-section").append("<img src='assets/images/bad-wine.PNG' width= '500px'>");
+                        $("#show-number").hide();
+                        intervalfour();
+
+                }
+
+                function fourthQuestionIncorrect () {
+                        $("#question-section").html("<h3> You Guessed Wrong! </h3>");
+                        $("#question-section").append("<h3> Correct Answer: Fat </h3>");
+                        $("#question-section").append("<img src='assets/images/bad-wine.PNG' width= '500px'>");
+                        $("#show-number").hide();
+                        intervalfour();
+                }
     
+
     function fifthQuestionSet () {
 
         $("#question-section").html("<h3 id='questionLine'> 'Frenching' is the process of... </h3>");
@@ -304,23 +402,56 @@
 
                                     $("#choice-a").on("click", function () {
                                         incorrectanswers++;
+                                        fifthQuestionIncorrect ();
                                         console.log("Incorrect:" + incorrectanswers);
                                         });
                                     $("#choice-b").on("click", function () {
                                         incorrectanswers++;
+                                        fifthQuestionIncorrect ();
                                         console.log("Incorrect:" + incorrectanswers);
                                         });
                                     $("#choice-c").on("click", function () {
                                         incorrectanswers++;
+                                        fifthQuestionIncorrect ();
                                         console.log("Incorrect:" + incorrectanswers);
                                         });
                                     $("#choice-d").on("click", function () {
                                         correctanswers++;
+                                        fifthQuestionRight ();
                                         console.log("Correct:" + correctanswers);
                                         });
 
     };
 
+                function intervalfive() {
+                        clearInterval(intervalId);
+                        intervalId = setInterval(decrementintervalfive, 1000);
+                        number = 4;
+                        }
+
+                function decrementintervalfive() {
+                        number--;
+// <!-- MAKE RESULTS SCREEN -->
+                        if (number === 0) {
+                            resultsScreen ();
+                        }
+                    }
+
+                function fifthQuestionRight () {
+                        $("#question-section").html("<h3> You Guessed Correct! </h3>");
+                        $("#question-section").append("<img src='assets/images/boning-knife.jpg' width= '500px'>");
+                        $("#show-number").hide();
+                        intervalfive();
+
+                }
+
+                function fifthQuestionIncorrect () {
+                        $("#question-section").html("<h3> You Guessed Wrong! </h3>");
+                        $("#question-section").append("<h3> Correct Answer: cleaning bones of fat and meat </h3>");
+                        $("#question-section").append("<img src='assets/images/boning-knife.jpg' width= '500px'>");
+                        $("#show-number").hide();
+                        intervalfive();
+                }
 
 
     
