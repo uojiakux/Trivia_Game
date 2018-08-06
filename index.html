@@ -33,34 +33,100 @@
     var incorrectanswers = 0;
 
     // Set our number counter to 11
-    // var number = 11;
+    var number = 16;
     // //  Variable that will hold our interval ID when we execute
     // //  the "run" function
-    // var intervalId;
+    var intervalId;
 
 
-    // function run() {
-    //         clearInterval(intervalId);
-    //         intervalId = setInterval(decrement, 1000);
-    //         }
+    function runone() {
+            clearInterval(intervalId);
+            intervalId = setInterval(decrementone, 1000);
+            number = 16;
+            }
 
-    // function decrement() {
-    //         number--;
-    //         $("#show-number").html("<h2>" + number + "</h2>");
+    function decrementone() {
+            number--;
+            $("#show-number").html("<h2>" + number + "</h2>");
 
+            if (number === 0) {
+                number = 16;
+                incorrectanswers++;
+                console.log("Incorrect:" + incorrectanswers);
+                secondQuestionSet ();
+            }
+        }
 
-    //         //  Once number hits zero...
-    //         if (number === 0) {
+    function runtwo() {
+            clearInterval(intervalId);
+            intervalId = setInterval(decrementtwo, 1000);
+            number = 16;
+            }
 
-    //         //  ...run the stop function.
-    //         stop();
-    //         incorrectanswers++;
-    //         secondQuestionSet ();
+    function decrementtwo() {
+            number--;
+            $("#show-number").html("<h2>" + number + "</h2>");
 
-    //         //  Alert the user that time is up.
-    //         //   alert("Time Up!");
-    //         }
-    //     }
+            if (number === 0) {
+                number = 16;
+                incorrectanswers++;
+                console.log("Incorrect:" + incorrectanswers);
+                thirdQuestionSet ();
+            }
+        }
+
+    function runthree() {
+            clearInterval(intervalId);
+            intervalId = setInterval(decrementthree, 1000);
+            number = 16;
+            }
+
+    function decrementthree() {
+            number--;
+            $("#show-number").html("<h2>" + number + "</h2>");
+
+            if (number === 0) {
+                number = 16;
+                incorrectanswers++;
+                console.log("Incorrect:" + incorrectanswers);
+                fourthQuestionSet ();
+            }
+        }
+
+    function runfour() {
+            clearInterval(intervalId);
+            intervalId = setInterval(decrementfour, 1000);
+            number = 16;
+            }
+
+    function decrementfour() {
+            number--;
+            $("#show-number").html("<h2>" + number + "</h2>");
+
+            if (number === 0) {
+                number = 16;
+                incorrectanswers++;
+                console.log("Incorrect:" + incorrectanswers);
+                fifthQuestionSet ();
+            }
+        }
+
+    function runfive() {
+            clearInterval(intervalId);
+            intervalId = setInterval(decrementfour, 1000);
+            number = 16;
+            }
+
+    function decrementfour() {
+            number--;
+            $("#show-number").html("<h2>" + number + "</h2>");
+
+            if (number === 0) {
+                number = 16;
+                incorrectanswers++;
+                console.log("Incorrect:" + incorrectanswers);
+            }
+        }
 
     $("#startButton").on("click", function startNextQuestionSet () {
 
@@ -70,10 +136,12 @@
         $("#question-section").append("<button class='choices' id='choice-c'> Ireland </button>");
         $("#question-section").append("<button class='choices' id='choice-d'> Russia </button>");
         $("#startButton").remove();
+        runone ();
 
 
                                     $("#choice-a").on("click", function () {
-                                        secondQuestionSet ();
+                                        // secondQuestionSet ();
+                                        firstQuestionRight ();
                                         correctanswers++;
                                         console.log("Correct:" + correctanswers);
                                         });
@@ -95,6 +163,12 @@
             
     });
 
+    function firstQuestionRight () {
+        $("#question-section").html("<h3> You Guessed Correct! </h3>");
+        $("#question-section").append("<img src='assets/images/Chinapotatoes.jpg' width= '500px'>");
+
+    }
+
     function secondQuestionSet () {
 
         $("#question-section").html("<h3 id='questionLine'> What vegetable has varieties known as Bell Tower, Orobelle, and Jupiter? </h3>");
@@ -103,6 +177,7 @@
         $("#question-section").append("<button class='choices' id='choice-c'> Squash </button>");
         $("#question-section").append("<button class='choices' id='choice-d'> Carrot </button>");
         $("#startButton").remove();
+        runtwo ();
 
                                     $("#choice-a").on("click", function () {
                                         thirdQuestionSet ();
@@ -135,6 +210,7 @@
         $("#question-section").append("<button class='choices' id='choice-c'> East Indians </button>");
         $("#question-section").append("<button class='choices' id='choice-d'> Asians </button>");
         $("#startButton").remove();
+        runthree();
 
                                     $("#choice-a").on("click", function () {
                                         fourthQuestionSet ();
@@ -167,6 +243,7 @@
         $("#question-section").append("<button class='choices' id='choice-c'> Leggy </button>");
         $("#question-section").append("<button class='choices' id='choice-d'> Vigorous </button>");
         $("#startButton").remove();
+        runfour();
 
                                     $("#choice-a").on("click", function () {
                                         fifthQuestionSet ();
@@ -199,6 +276,7 @@
         $("#question-section").append("<button class='choices' id='choice-c'> baking at low heat </button>");
         $("#question-section").append("<button class='choices' id='choice-d'> cleaning bones of fat and meat </button>");
         $("#startButton").remove();
+        runfive();
 
                                     $("#choice-a").on("click", function () {
                                         incorrectanswers++;
