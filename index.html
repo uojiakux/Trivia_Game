@@ -140,34 +140,58 @@
 
 
                                     $("#choice-a").on("click", function () {
-                                        // secondQuestionSet ();
                                         firstQuestionRight ();
                                         correctanswers++;
                                         console.log("Correct:" + correctanswers);
                                         });
                                     $("#choice-b").on("click", function () {
-                                        secondQuestionSet ();
+                                        firstQuestionIncorrect ();
                                         incorrectanswers++;
                                         console.log("Incorrect:" + incorrectanswers);
                                         });
                                     $("#choice-c").on("click", function () {
-                                        secondQuestionSet ();
+                                        firstQuestionIncorrect ();
                                         incorrectanswers++;
                                         console.log("Incorrect:" + incorrectanswers);
                                         });
                                     $("#choice-d").on("click", function () {
-                                        secondQuestionSet ();
+                                        firstQuestionIncorrect ();
                                         incorrectanswers++;
                                         console.log("Incorrect:" + incorrectanswers);
                                         });
             
     });
 
-    function firstQuestionRight () {
-        $("#question-section").html("<h3> You Guessed Correct! </h3>");
-        $("#question-section").append("<img src='assets/images/Chinapotatoes.jpg' width= '500px'>");
+                function intervalone() {
+                        clearInterval(intervalId);
+                        intervalId = setInterval(decrementintervalone, 1000);
+                        number = 6;
+                        }
 
-    }
+                function decrementintervalone() {
+                        number--;
+
+                        if (number === 0) {
+                            secondQuestionSet ();
+                        }
+                    }
+
+                function firstQuestionRight () {
+                        $("#question-section").html("<h3> You Guessed Correct! </h3>");
+                        $("#question-section").append("<img src='assets/images/Chinapotatoes.jpg' width= '500px'>");
+                        $("#show-number").remove();
+                        intervalone();
+
+                }
+
+                function firstQuestionIncorrect () {
+                        $("#question-section").html("<h3> You Guessed Wrong! </h3>");
+                        $("#question-section").append("<h3> Correct Answer: China </h3>");
+                        $("#question-section").append("<img src='assets/images/Chinapotatoes.jpg' width= '500px'>");
+                        $("#show-number").remove();
+                        intervalone();
+
+                }
 
     function secondQuestionSet () {
 
