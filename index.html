@@ -462,7 +462,7 @@
 
                 function decrementintervalfive() {
                         number--;
-// <!-- MAKE RESULTS SCREEN -->
+
                         if (number === 0) {
                             resultsScreen ();
                         }
@@ -498,13 +498,48 @@
         $("#question-section").append("<h2 class='intervaltext'> Correct Answers: " + correctanswers + "</h2>");
         $("#question-section").append("<h2 class='intervaltext'> Incorrect Answers: " + incorrectanswers + "</h2>");
         $("#question-section").append("<button class='button' id='restartgame'> Restart Game! </button>");
+
+    
+
+    $("#restartgame").on("click", function restartgame () {
+
+        $("#question-section").html("<h3 id='questionLine'> What country produces the most potatoes? </h3>");
+        $("#question-section").append("<button class='choices' id='choice-a'> China </button>");
+        $("#question-section").append("<button class='choices' id='choice-b'> United States </button>");
+        $("#question-section").append("<button class='choices' id='choice-c'> Ireland </button>");
+        $("#question-section").append("<button class='choices' id='choice-d'> Russia </button>");
+        $("#startButton").remove();
+        correctanswers = 0;
+        incorrectanswers = 0;
+        runone ();
+
+
+                            $("#choice-a").on("click", function () {
+                                firstQuestionRight ();
+                                correctanswers++;
+                                console.log("Correct:" + correctanswers);
+                                });
+                            $("#choice-b").on("click", function () {
+                                firstQuestionIncorrect ();
+                                incorrectanswers++;
+                                console.log("Incorrect:" + incorrectanswers);
+                                });
+                            $("#choice-c").on("click", function () {
+                                firstQuestionIncorrect ();
+                                incorrectanswers++;
+                                console.log("Incorrect:" + incorrectanswers);
+                                });
+                            $("#choice-d").on("click", function () {
+                                firstQuestionIncorrect ();
+                                incorrectanswers++;
+                                console.log("Incorrect:" + incorrectanswers);
+                                });
+    
+    });
+
     }
 
-// FIND OUT WHY THIS IS NOT WORKING
-                                        // $("#restartgame").on("click", function () {
-                                        //     startNextQuestionSet ();
-                                        // }
-    
+
     </script>
 
 </body>
