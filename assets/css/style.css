@@ -1,27 +1,42 @@
 body {
-    background-image: url(../images/retina_wood.png);
+    background-image: url(../images/food-background.jpg);
 }
 
 #bodyContainer {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 12px;
     width: 960px;
-    height: 900px;
+    height: 919px;
     background-color: white;
-    border: 5px;
-    border-color: rgb(75, 75, 138);
+    border-style: solid;
+    border-color: rgb(4, 8, 48);
+    border-width: 5px;
 }
 
 #Title {
     text-align: center;
+    font-family: 'Chewy', cursive;
+    font-size: 65px;
+    color: black;
 }
 
-#startButton {
-    margin-left: 45%;
-    padding-left: 40px;
-    padding-right: 40px;
+.button {
+    margin-left: 42%;
+    font-size: 20px;
+    background-color: white;
+    padding-left: 75px;
+    padding-right: 75px;
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+#restartgame {
+    margin-left: 35.3%;
+}
+
+.timer {
+    text-align: center;
 }
 
 #questionLine {
@@ -39,3 +54,41 @@ body {
     font-size: 20px;
 }
 
+.intervaltext {
+    text-align: center;
+}
+
+#pictureone {
+    margin-left: 23%;
+    border-style: double;
+    border-width: 5px;
+    border-color: rgb(56, 54, 68);
+}
+
+#picturetwo {
+    margin-left: 23%;
+    border-style: double;
+    border-width: 5px;
+    border-color: rgb(56, 54, 68);
+}
+
+#picturethree {
+    margin-left: 23%;
+    border-style: double;
+    border-width: 5px;
+    border-color: rgb(56, 54, 68);
+}
+
+#picturefour {
+    margin-left: 23%;
+    border-style: double;
+    border-width: 5px;
+    border-color: rgb(56, 54, 68);
+}
+
+#picturefive {
+    margin-left: 23%;
+    border-style: double;
+    border-width: 5px;
+    border-color: rgb(56, 54, 68);
+}

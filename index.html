@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Trivial Triva</title>
+    <link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 </head>
 
@@ -12,9 +13,9 @@
 <div id="bodyContainer">
 
     <br><br>
-    <h1 id="Title">Totally Trivial Trivia!</h1>
+    <h1 id="Title">Totally Trivial Food Trivia!</h1>
 
-    <button id="startButton">Start!</button>
+    <button class="button" id="startButton">Start!</button>
 
     <div id="show-number"></div>
     <div id="question-section"></div>
@@ -32,10 +33,7 @@
     var correctanswers = 0;
     var incorrectanswers = 0;
 
-    // Set our number counter to 11
     var number = 16;
-    // //  Variable that will hold our interval ID when we execute
-    // //  the "run" function
     var intervalId;
 
 
@@ -48,13 +46,13 @@
     function decrementone() {
             number--;
             $("#show-number").show();
-            $("#show-number").html("<h2> Time Left: " + number + "</h2>");
+            $("#show-number").html("<h2 class='timer'> Time Left: " + number + "</h2>");
 
             if (number === 0) {
                 number = 16;
                 incorrectanswers++;
                 console.log("Incorrect:" + incorrectanswers);
-                secondQuestionSet ();
+                firstQuestionTimesUp ();
             }
         }
 
@@ -67,13 +65,13 @@
     function decrementtwo() {
             number--;
             $("#show-number").show();
-            $("#show-number").html("<h2> Time Left: " + number + "</h2>");
+            $("#show-number").html("<h2 class='timer'> Time Left: " + number + "</h2>");
 
             if (number === 0) {
                 number = 16;
                 incorrectanswers++;
                 console.log("Incorrect:" + incorrectanswers);
-                thirdQuestionSet ();
+                secondQuestionTimesUp ();
             }
         }
 
@@ -86,13 +84,13 @@
     function decrementthree() {
             number--;
             $("#show-number").show();
-            $("#show-number").html("<h2> Time Left: " + number + "</h2>");
+            $("#show-number").html("<h2 class='timer'> Time Left: " + number + "</h2>");
 
             if (number === 0) {
                 number = 16;
                 incorrectanswers++;
                 console.log("Incorrect:" + incorrectanswers);
-                fourthQuestionSet ();
+                thirdQuestionTimesUp ();
             }
         }
 
@@ -105,31 +103,32 @@
     function decrementfour() {
             number--;
             $("#show-number").show();
-            $("#show-number").html("<h2> Time Left: " + number + "</h2>");
+            $("#show-number").html("<h2 class='timer'> Time Left: " + number + "</h2>");
 
             if (number === 0) {
                 number = 16;
                 incorrectanswers++;
                 console.log("Incorrect:" + incorrectanswers);
-                fifthQuestionSet ();
+                fourthQuestionTimesUp ();
             }
         }
 
     function runfive() {
             clearInterval(intervalId);
-            intervalId = setInterval(decrementfour, 1000);
+            intervalId = setInterval(decrementfive, 1000);
             number = 16;
             }
 
-    function decrementfour() {
+    function decrementfive() {
             number--;
             $("#show-number").show();
-            $("#show-number").html("<h2> Time Left: " + number + "</h2>");
+            $("#show-number").html("<h2 class='timer'> Time Left: " + number + "</h2>");
 
             if (number === 0) {
                 number = 16;
                 incorrectanswers++;
                 console.log("Incorrect:" + incorrectanswers);
+                fifthQuestionTimesUp ();
             }
         }
 
@@ -182,17 +181,25 @@
                     }
 
                 function firstQuestionRight () {
-                        $("#question-section").html("<h3> You Guessed Correct! </h3>");
-                        $("#question-section").append("<img src='assets/images/Chinapotatoes.jpg' width= '500px'>");
+                        $("#question-section").html("<h3 class='intervaltext'> You Guessed Correct! </h3>");
+                        $("#question-section").append("<img id='pictureone' src='assets/images/Chinapotatoes.jpg' width= '500px'>");
                         $("#show-number").hide();
                         intervalone();
 
                 }
 
                 function firstQuestionIncorrect () {
-                        $("#question-section").html("<h3> You Guessed Wrong! </h3>");
-                        $("#question-section").append("<h3> Correct Answer: China </h3>");
-                        $("#question-section").append("<img src='assets/images/Chinapotatoes.jpg' width= '500px'>");
+                        $("#question-section").html("<h3 class='intervaltext'> You Guessed Wrong! </h3>");
+                        $("#question-section").append("<h3 class='intervaltext'> Correct Answer: China </h3>");
+                        $("#question-section").append("<img id='pictureone' src='assets/images/Chinapotatoes.jpg' width= '500px'>");
+                        $("#show-number").hide();
+                        intervalone();
+                }
+
+                function firstQuestionTimesUp () {
+                        $("#question-section").html("<h3 class='intervaltext'> Times Up! </h3>");
+                        $("#question-section").append("<h3 class='intervaltext'> Correct Answer: China </h3>");
+                        $("#question-section").append("<img id='pictureone' src='assets/images/Chinapotatoes.jpg' width= '500px'>");
                         $("#show-number").hide();
                         intervalone();
                 }
@@ -246,17 +253,25 @@
                     }
 
                 function secondQuestionRight () {
-                        $("#question-section").html("<h3> You Guessed Correct! </h3>");
-                        $("#question-section").append("<img src='assets/images/Bell-Peppers.jpg' width= '500px'>");
+                        $("#question-section").html("<h3 class='intervaltext'> You Guessed Correct! </h3>");
+                        $("#question-section").append("<img id='picturetwo' src='assets/images/Bell-Peppers.jpg' width= '500px'>");
                         $("#show-number").hide();
                         intervaltwo();
 
                 }
 
                 function secondQuestionIncorrect () {
-                        $("#question-section").html("<h3> You Guessed Wrong! </h3>");
-                        $("#question-section").append("<h3> Correct Answer: Pepper </h3>");
-                        $("#question-section").append("<img src='assets/images/Bell-Peppers.jpg' width= '500px'>");
+                        $("#question-section").html("<h3 class='intervaltext'> You Guessed Wrong! </h3>");
+                        $("#question-section").append("<h3 class='intervaltext'> Correct Answer: Pepper </h3>");
+                        $("#question-section").append("<img id='picturetwo' src='assets/images/Bell-Peppers.jpg' width= '500px'>");
+                        $("#show-number").hide();
+                        intervaltwo();
+                }
+
+                function secondQuestionTimesUp () {
+                        $("#question-section").html("<h3 class='intervaltext'> Times Up! </h3>");
+                        $("#question-section").append("<h3 class='intervaltext'> Correct Answer: Pepper </h3>");
+                        $("#question-section").append("<img id='picturetwo' src='assets/images/Bell-Peppers.jpg' width= '500px'>");
                         $("#show-number").hide();
                         intervaltwo();
                 }
@@ -310,17 +325,25 @@
                     }
 
                 function thirdQuestionRight () {
-                        $("#question-section").html("<h3> You Guessed Correct! </h3>");
-                        $("#question-section").append("<img src='assets/images/Aztecs-First-Used-Chocolate-w-754x377.jpg' width= '500px'>");
+                        $("#question-section").html("<h3 class='intervaltext'> You Guessed Correct! </h3>");
+                        $("#question-section").append("<img id='picturethree' src='assets/images/Aztecs-First-Used-Chocolate-w-754x377.jpg' width= '500px'>");
                         $("#show-number").hide();
                         intervalthree();
 
                 }
 
                 function thirdQuestionIncorrect () {
-                        $("#question-section").html("<h3> You Guessed Wrong! </h3>");
-                        $("#question-section").append("<h3> Correct Answer: Aztecs </h3>");
-                        $("#question-section").append("<img src='assets/images/Aztecs-First-Used-Chocolate-w-754x377.jpg' width= '500px'>");
+                        $("#question-section").html("<h3 class='intervaltext'> You Guessed Wrong! </h3>");
+                        $("#question-section").append("<h3 class='intervaltext'> Correct Answer: Aztecs </h3>");
+                        $("#question-section").append("<img id='picturethree' src='assets/images/Aztecs-First-Used-Chocolate-w-754x377.jpg' width= '500px'>");
+                        $("#show-number").hide();
+                        intervalthree();
+                }
+
+                function thirdQuestionTimesUp () {
+                        $("#question-section").html("<h3 class='intervaltext'> Times Up! </h3>");
+                        $("#question-section").append("<h3 class='intervaltext'> Correct Answer: Aztecs </h3>");
+                        $("#question-section").append("<img id='picturethree' src='assets/images/Aztecs-First-Used-Chocolate-w-754x377.jpg' width= '500px'>");
                         $("#show-number").hide();
                         intervalthree();
                 }
@@ -374,17 +397,25 @@
                     }
 
                 function fourthQuestionRight () {
-                        $("#question-section").html("<h3> You Guessed Correct! </h3>");
-                        $("#question-section").append("<img src='assets/images/bad-wine.PNG' width= '500px'>");
+                        $("#question-section").html("<h3 class='intervaltext'> You Guessed Correct! </h3>");
+                        $("#question-section").append("<img id='picturefour' src='assets/images/bad-wine.PNG' width= '500px'>");
                         $("#show-number").hide();
                         intervalfour();
 
                 }
 
                 function fourthQuestionIncorrect () {
-                        $("#question-section").html("<h3> You Guessed Wrong! </h3>");
-                        $("#question-section").append("<h3> Correct Answer: Fat </h3>");
-                        $("#question-section").append("<img src='assets/images/bad-wine.PNG' width= '500px'>");
+                        $("#question-section").html("<h3 class='intervaltext'> You Guessed Wrong! </h3>");
+                        $("#question-section").append("<h3 class='intervaltext'> Correct Answer: Fat </h3>");
+                        $("#question-section").append("<img id='picturefour' src='assets/images/bad-wine.PNG' width= '500px'>");
+                        $("#show-number").hide();
+                        intervalfour();
+                }
+
+                function fourthQuestionTimesUp () {
+                        $("#question-section").html("<h3 class='intervaltext'> Times Up! </h3>");
+                        $("#question-section").append("<h3 class='intervaltext'> Correct Answer: Fat </h3>");
+                        $("#question-section").append("<img id='picturefour' src='assets/images/bad-wine.PNG' width= '500px'>");
                         $("#show-number").hide();
                         intervalfour();
                 }
@@ -438,22 +469,41 @@
                     }
 
                 function fifthQuestionRight () {
-                        $("#question-section").html("<h3> You Guessed Correct! </h3>");
-                        $("#question-section").append("<img src='assets/images/boning-knife.jpg' width= '500px'>");
+                        $("#question-section").html("<h3 class='intervaltext'> You Guessed Correct! </h3>");
+                        $("#question-section").append("<img id='picturefive' src='assets/images/boning-knife.jpg' width= '500px'>");
                         $("#show-number").hide();
                         intervalfive();
 
                 }
 
                 function fifthQuestionIncorrect () {
-                        $("#question-section").html("<h3> You Guessed Wrong! </h3>");
-                        $("#question-section").append("<h3> Correct Answer: cleaning bones of fat and meat </h3>");
-                        $("#question-section").append("<img src='assets/images/boning-knife.jpg' width= '500px'>");
+                        $("#question-section").html("<h3 class='intervaltext'> You Guessed Wrong! </h3>");
+                        $("#question-section").append("<h3 class='intervaltext'> Correct Answer: cleaning bones of fat and meat </h3>");
+                        $("#question-section").append("<img id='picturefive' src='assets/images/boning-knife.jpg' width= '500px'>");
+                        $("#show-number").hide();
+                        intervalfive();
+                }
+
+                function fifthQuestionTimesUp () {
+                        $("#question-section").html("<h3 class='intervaltext'> Times Up! </h3>");
+                        $("#question-section").append("<h3 class='intervaltext'> Correct Answer: cleaning bones of fat and meat </h3>");
+                        $("#question-section").append("<img id='picturefive' src='assets/images/boning-knife.jpg' width= '500px'>");
                         $("#show-number").hide();
                         intervalfive();
                 }
 
 
+    function resultsScreen () {
+        $("#question-section").html("<h3 class='intervaltext' id='questionLine'> Here are your Results! </h3>");
+        $("#question-section").append("<h2 class='intervaltext'> Correct Answers: " + correctanswers + "</h2>");
+        $("#question-section").append("<h2 class='intervaltext'> Incorrect Answers: " + incorrectanswers + "</h2>");
+        $("#question-section").append("<button class='button' id='restartgame'> Restart Game! </button>");
+    }
+
+// FIND OUT WHY THIS IS NOT WORKING
+                                        // $("#restartgame").on("click", function () {
+                                        //     startNextQuestionSet ();
+                                        // }
     
     </script>
 
